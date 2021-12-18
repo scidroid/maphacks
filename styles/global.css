@@ -1,0 +1,15 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  font-family: "DM Sans", sans-serif;
+}
+
+.btn-black {
+  @apply bg-black text-white font-bold py-2 px-4 rounded;
+}
+
+.btn-white {
+  @apply bg-white text-black font-bold py-2 px-4 rounded;
+}
