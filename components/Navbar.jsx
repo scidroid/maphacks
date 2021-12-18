@@ -12,7 +12,7 @@ const Navbar = () => {
       <h1>
         <Link href={"/"}>
           <a className={"text-2xl text-black text-center font-bold"}>
-            MapHacks
+            KindlyMap
           </a>
         </Link>
       </h1>

@@ -7,7 +7,7 @@ const App = ({ Component, pageProps }) => {
   return (
     <>
       <Head>
-        <title>MapHacks</title>
+        <title>KindlyMap</title>
       </Head>
       <UserProvider>
         <Layout>
