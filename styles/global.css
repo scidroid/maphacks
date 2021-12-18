@@ -19,3 +19,7 @@ body {
 .container-cause {
   @apply text-lg;
 }
+
+.container-cause p {
+  @apply m-2;
+}
