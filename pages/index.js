@@ -103,7 +103,7 @@ const Landing = () => {
       >
         <section className={"flex flex-col justify-center items-center"}>
           <h2 className={"text-5xl font-bold m-4 text-center"}>
-            Start buildind a better <span className={"underline"}>world!</span>
+            Start building a better <span className={"underline"}>world!</span>
           </h2>
           <p className={"m-4 text-xl text-center max-w-lg"}>
             You already have everything to start, login and help your community in minutes.
