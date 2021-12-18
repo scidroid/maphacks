@@ -6,7 +6,7 @@ body {
   font-family: "DM Sans", sans-serif;
 }
 
-.btn-black {
+.btn-black, .uploadcare--widget__button, .uploadcare--widget__button_type_open {
   @apply bg-black text-white font-bold py-2 px-4 rounded;
 }
 

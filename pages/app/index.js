@@ -47,7 +47,7 @@ const HomeApp = ({ google, markers }) => {
       setAddPlace(data);
     }
   };
-  const InfoContent = ({ message, position, image, place, id }) => {
+  const InfoContent = ({ message, position, image, place, id, nedeed }) => {
     console.log(message, position, image, place);
     if (message == "Add this place") {
       return (
@@ -62,16 +62,17 @@ const HomeApp = ({ google, markers }) => {
     } else {
       console.log(message);
       return (
-        <>
+        <div className={"flex flex-col items-center justify-center"}>
           <img src={image} alt={message} width="200px" />
           <h1 className="font-bold text-center">{message}</h1>
-          <h2 className="font-bold text-center">{place}</h2>
+          <h2 className="font-bold text-center">{"Needs: $" + nedeed}</h2>
+          <h2 className="text-center">{place}</h2>
           <Link href={"/app/cause/" + id}>
-            <a className="text-center m-2 text-blue-400 font-bold underline">
+            <a className="text-center text-blue-400 font-bold underline">
               Contribute with this cause
             </a>
           </Link>
-        </>
+        </div>
       );
     }
   };
@@ -88,10 +89,9 @@ const HomeApp = ({ google, markers }) => {
     <div className="">
       {currentPosition && (
         <>
-          {" "}
           <Map
             google={google}
-            zoom={12.5}
+            zoom={10}
             onClick={(a, b, c) => handleClick(c)}
             style={mapStyles}
             center={currentPosition}
@@ -112,6 +112,7 @@ const HomeApp = ({ google, markers }) => {
                 name={n.name}
                 image={n.image}
                 place={n.place}
+                nedeed={n.nedeed}
                 onClick={onMarkerClick}
               />
             ))}
@@ -126,6 +127,7 @@ const HomeApp = ({ google, markers }) => {
                 image={selectedPlace.image}
                 place={selectedPlace.place}
                 id={selectedPlace.id}
+                nedeed={selectedPlace.nedeed}
               />
             </InfoWindow>
           </Map>
