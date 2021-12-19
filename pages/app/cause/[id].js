@@ -6,22 +6,26 @@ import confetti from "canvas-confetti";
 const Cause = ({ cause, donationTotal }) => {
   const [donation, setDonation] = useState(0);
   return (
-    <div className={"flex flex-col items-center justify-center"}>
+    <div className={"flex flex-col items-center"}>
       <Toaster />
-      <iframe
-        className="w-4/5 h-96"
-        src={`https://www.youtube-nocookie.com/embed/${
-          cause.url.split("https://www.youtube.com/watch?v=")[1]
-        }`}
-        frameBorder="0"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-        allowFullScreen
-        title="Cause video"
-      />
-      <h1 className={"font-bold text-4xl text-center m-2"}>{cause.name}</h1>
-      <h2 className={"font-bold text-3xl text-center m-2"}>
-        {"progress: $" + donationTotal + " of $" + cause.nedeed}
-      </h2>
+      <div className={"flex justify-around items-center"}>
+        <iframe
+          className="w-2/5 h-96"
+          src={`https://www.youtube-nocookie.com/embed/${
+            cause.url.split("https://www.youtube.com/watch?v=")[1]
+          }`}
+          frameBorder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowFullScreen
+          title="Cause video"
+        />
+        <div className={"w-2/5"}>
+          <h1 className={"font-bold text-4xl text-center m-2"}>{cause.name}</h1>
+          <h2 className={"text-3xl text-center m-2"}>
+            {"progress: $" + donationTotal + " of $" + cause.nedeed}
+          </h2>
+        </div>
+      </div>
       <div className={"flex flex-row items-center justify-center"}>
         <div
           className="w-2/5 container-cause"
