@@ -13,17 +13,10 @@ const HomeApp = ({ google, markers }) => {
   const [showInfo, setShowInfo] = useState(false);
   const [selectedPlace, setSelectedPlace] = useState({});
   const [addPlace, setAddPlace] = useState({});
-  const [isMonetized, setIsMonetized] = useState(false);
+  const [isMonetized, setIsMonetized] = useState(true);
   const [counter, setCounter] = useState(0);
   const [currentPosition, setCurrentPosition] = useState({});
   useEffect(() => {
-    if (document.monetization) {
-      setIsMonetized(true);
-    } else {
-      toast.error("Active Coil for auto-donate to multiple causes", {
-        duration: 6000,
-      });
-    }
     navigator.geolocation.getCurrentPosition((position) => {
       setCurrentPosition({
         lat: position.coords.latitude,
@@ -79,7 +72,7 @@ const HomeApp = ({ google, markers }) => {
   if (isMonetized && counter < 1) {
     setCounter(counter + 1);
     toast.success(
-      "You have enabled web monetization with Coil. Now automatically you are donating to multiple causes :0",
+      "Click anywhere in the map to add causes :0",
       {
         duration: 6000,
       }
